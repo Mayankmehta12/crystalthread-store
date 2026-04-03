@@ -86,7 +86,8 @@ app.use(cors({
   origin: [
     "https://crystalthread.store",
     "https://www.crystalthread.store",
-    "http://localhost:5173"
+    "http://localhost:5173",
+    "https://crystalthread-store.vercel.app"
   ],
   credentials: true
 }));
