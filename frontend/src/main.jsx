@@ -9,7 +9,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <GoogleOAuthProvider clientId="878628992138-fr430uilkgdavkrvr2gkbkpldg3bhm9g.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="303743344751-d7fu4aqkereqpfp0dribl9oa5cloho39.apps.googleusercontent.com">
       <CartProvider>
         <WishlistProvider>
 
