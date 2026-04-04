@@ -100,8 +100,6 @@ app.use(cors({
   credentials: true,
 }));
 
-app.options("*", cors());
-
 // ===============================
 // 📁 STATIC FILES (IMPORTANT)
 // ===============================
