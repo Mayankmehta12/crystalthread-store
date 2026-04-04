@@ -83,9 +83,13 @@ app.use("/api", limiter); // ✅ apply only to API
 // 🌐 CORS (PRODUCTION SAFE)
 // ===============================
 app.use(cors({
-  origin: process.env.CLIENT_URL,
+  origin: [
+    "https://crystalthread-store.vercel.app"
+  ],
   credentials: true
 }));
+
+app.options("*",cors());
 
 // ===============================
 // 📁 STATIC FILES (IMPORTANT)
