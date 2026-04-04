@@ -4,6 +4,7 @@
 import "./config/env.js";
 
 import express from "express";
+import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import mongoSanitize from "express-mongo-sanitize";
@@ -81,7 +82,7 @@ app.use("/api", limiter); // ✅ apply only to API
 // ===============================
 // 🌐 CORS (PRODUCTION SAFE)
 // ===============================
-import cors from "cors";
+
 
 const allowedOrigins = [
   "https://crystalthread-store.vercel.app",
