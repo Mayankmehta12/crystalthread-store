@@ -82,7 +82,6 @@ app.use("/api", limiter); // ✅ apply only to API
 // ===============================
 // 🌐 CORS (PRODUCTION SAFE)
 // ===============================
-import cors from "cors";
 
 const allowedOrigins = [
   "https://crystalthread-store.vercel.app",
