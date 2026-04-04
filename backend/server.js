@@ -82,14 +82,25 @@ app.use("/api", limiter); // ✅ apply only to API
 // ===============================
 // 🌐 CORS (PRODUCTION SAFE)
 // ===============================
+import cors from "cors";
+
+const allowedOrigins = [
+  "https://crystalthread-store.vercel.app",
+  "http://localhost:5173"
+];
+
 app.use(cors({
-  origin: [
-    "https://crystalthread-store.vercel.app"
-  ],
-  credentials: true
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("CORS not allowed"));
+    }
+  },
+  credentials: true,
 }));
 
-app.options("*",cors());
+app.options("*", cors());
 
 // ===============================
 // 📁 STATIC FILES (IMPORTANT)
