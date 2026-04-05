@@ -85,7 +85,7 @@ app.use("/api", limiter); // ✅ apply only to API
 
 
 const allowedOrigins = [
-  "https://crystalthread-store.vercel.app",
+  "https://crystalthread.store",
   "http://localhost:5173"
 ];
 
