@@ -86,7 +86,6 @@ app.use("/api", limiter); // ✅ apply only to API
 
 const allowedOrigins = [
   "https://crystalthread.store",
-  "http://localhost:5173"
 ];
 
 app.use(cors({
