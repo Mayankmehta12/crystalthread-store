@@ -84,16 +84,22 @@ app.use("/api", limiter); // ✅ apply only to API
 // ===============================
 
 
-app.use(cors({
-  origin: [
-    "https://crystalthread.store",
-    "https://www.crystalthread.store",
-    "http://localhost:5173",
-    "https://crystalthread-store.vercel.app"
-  ],
-  credentials: true
-}));
+const allowedOrigins = [
+  "https://crystalthread.store",
+  "https://www.crystalthread.store",
+  "http://localhost:5173",
+];
 
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("CORS not allowed"));
+    }
+  },
+  credentials: true,
+}));
 
 // ===============================
 // 📁 STATIC FILES (IMPORTANT)
